@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Plant Disease Classification</title>
+    <link rel="stylesheet" type="text/css"  href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <h1>Plant Disease Classification</h1>
+
+    <form id="uploadForm" method="post" action="{{url_for('predict')}}">
+        <input type="file" name="image" id="imageInput">
+        <button type="submit">Upload</button>
+    </form>
+    <div id="result">
+        
+    </div>
+
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>
