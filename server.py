@@ -30,16 +30,20 @@ def predict():
     # Read and preprocess the image
     image = cv2.imdecode(np.fromstring(image_file.read(), np.uint8), cv2.IMREAD_COLOR)
     image = cv2.resize(image, (256, 256))  # Resize image
-    # image = image / 255.0  # Normalize image
+    #do normalization if needed
 
     # Make predictions
     predictions = model.predict(np.expand_dims(image, axis=0))
     predicted_class_index = np.argmax(predictions)
     predicted_class = class_names[predicted_class_index]
-    print(predicted_class)
 
-    # Return prediction result
-    return jsonify({'predicted_class': predicted_class})
+    # Convert predictions to dictionary format for JSON serialization
+    confidences = {class_names[i]: float(predictions[0][i]) for i in range(len(class_names))}
+
+    # Return prediction result along with confidences
+    return jsonify({'predicted_class': predicted_class, 'confidences': confidences})
+
+    #return jsonify({'predicted_class': predicted_class})
     # return render_template('index.html',prediction='predictoin is ${}'.format(predicted_class))
 
 if __name__ == '__main__':

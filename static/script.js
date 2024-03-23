@@ -23,6 +23,14 @@ function handleSubmit(event) {
             // Display prediction result
             const resultElement = document.getElementById('result');
             resultElement.innerHTML = `Predicted Class: ${data.predicted_class}`;
+              // Display list of confidences
+            resultElement.innerHTML += '<h2>Confidences:</h2>';
+            const sortedConfidences = Object.entries(data.confidences)
+                .sort(([,a], [,b]) => b - a); // Sort confidences in descending order
+            sortedConfidences.forEach(([className, confidence]) => {
+                const confidencePercent = (confidence * 100).toFixed(1); // Convert confidence to percentage with 1 decimal
+                resultElement.innerHTML += `<p>${className}: ${confidencePercent}%</p>`;
+            });
         })
         .catch(error => {
             console.error('Error:', error);
