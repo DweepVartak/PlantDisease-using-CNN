@@ -22,9 +22,9 @@ function handleSubmit(event) {
         .then(data => {
             // Display prediction result
             const resultElement = document.getElementById('result');
-            resultElement.innerHTML = `Predicted Class: ${data.predicted_class}`;
+            resultElement.innerHTML = `<h2>Predicted Class :  ${data.predicted_class}</h2>`;
               // Display list of confidences
-            resultElement.innerHTML += '<h2>Confidences:</h2>';
+            resultElement.innerHTML += '<h3>Confidences:</h3>';
             const sortedConfidences = Object.entries(data.confidences)
                 .sort(([,a], [,b]) => b - a); // Sort confidences in descending order
             sortedConfidences.forEach(([className, confidence]) => {

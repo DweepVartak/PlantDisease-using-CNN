@@ -1,19 +1,42 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Plant Disease Classification</title>
-    <link rel="stylesheet" type="text/css"  href="{{ url_for('static', filename='styles.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='styles.css') }}">
 </head>
 <body>
-    <h1>Plant Disease Classification</h1>
+    <header>
+        <div class="header-content">
+            <h1>Plant Disease Classification</h1>
+            <p>Empowering farmers with AI technology</p>
+        </div>
+    </header>
 
-    <form id="uploadForm" method="post" action="{{url_for('predict')}}">
-        <input type="file" name="image" id="imageInput">
-        <button type="submit">Upload</button>
-    </form>
-    <div id="result">
+    <main>
+        <section class="upload-section">
+            <div class="upload-container">
+                <form id="uploadForm" method="post" action="{{url_for('predict')}}" enctype="multipart/form-data">
+                    <label for="imageInput" class="upload-label">Select an image of a plant leaf:</label>
+                    <input type="file" name="image" id="imageInput" accept="image/*">
+                    <button type="submit" class="upload-button">Upload</button>
+                </form>
+            </div>
+        </section>
+
+        <section id="result" class="result-section">
+            <!-- Predicted classes and their confidences will be displayed here -->
+        </section>
         
-    </div>
+        
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <p>&copy; 2024 Plant Disease Classification. Made with ❤️</p>
+        </div>
+    </footer>
 
     <script src="{{ url_for('static', filename='script.js') }}"></script>
 </body>

@@ -1,50 +1,114 @@
-/* styles.css */
-
 body {
     font-family: Arial, sans-serif;
-    background-color: #f0f0f0;
     margin: 0;
     padding: 0;
+    background-color: #f0f0f0;
 }
 
-.container {
-    max-width: 800px;
-    margin: 0 auto;
+header {
+    /* background-image: url('image1.jpg');
+    background-size: cover; /* Cover the entire header 
+    background-position: center; Center the background image */
+    background-color: #4CAF50; /* Green header */
+    color: #ffffff;
+    text-align: center;
+    padding: 50px 0;
+}
+
+.header-content {
     padding: 20px;
 }
 
 h1 {
+    margin: 0;
+    font-size: 48px;
+}
+
+p {
+    font-size: 18px;
+}
+
+main {
+    padding: 20px;
+}
+
+.upload-section {
     text-align: center;
-    color: #333;
+    margin-bottom: 20px;
 }
 
-form {
+.upload-container {
+    background-color: #ffffff; /* White background */
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Light shadow */
+}
+
+.upload-label {
+    font-size: 18px;
+    display: block;
+    margin-bottom: 10px;
+}
+
+#imageInput {
+    display: block;
+    margin: 0 auto;
+    margin-bottom: 10px;
+}
+
+.upload-button {
+    background-color: #4CAF50; /* Green button */
+    color: #ffffff;
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    border-radius: 5px;
+}
+
+.upload-button:hover {
+    background-color: #45a049; /* Darker green on hover */
+}
+
+.result-section {
     text-align: center;
-    margin-top: 20px;
 }
-
-input[type="file"] {
-    background-color: #357d9c;
-    color: white;
-    padding: 10px 20px;
-    border: none;
-    cursor: pointer;
-}
-
-button[type="submit"] {
-    background-color: #4CAF50;
-    color: white;
-    padding: 10px 20px;
-    border: none;
-    cursor: pointer;
-}
-
-button[type="submit"]:hover {
-    background-color: #45a049;
-}
-
+/* CSS for predicted results */
 #result {
-    text-align: center;
     margin-top: 20px;
+}
+
+#result h2 {
+    font-size: 24px;
     font-weight: bold;
+    color: #333; /* Dark text color */
+}
+
+#result h3 {
+    font-size: 20px;
+    font-weight: bold;
+    color: #555; /* Darker text color */
+    margin-top: 15px;
+}
+
+#result p {
+    font-size: 16px;
+    margin-bottom: 8px;
+    color: #666; /* Medium-dark text color */
+}
+
+
+footer {
+    background-color: #333; /* Dark footer */
+    color: #ffffff;
+    text-align: center;
+    padding: 0px 0;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+}
+
+.footer-content {
+    padding: 0px;
 }

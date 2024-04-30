@@ -20,7 +20,7 @@ class_names = ['Pepper__bell___Bacterial_spot',
 @app.route('/')
 def index():
     return render_template('index.html')
-
+    
 # Endpoint to handle image upload and prediction
 @app.route('/predict', methods=['POST'])
 def predict():
@@ -30,6 +30,7 @@ def predict():
     # Read and preprocess the image
     image = cv2.imdecode(np.fromstring(image_file.read(), np.uint8), cv2.IMREAD_COLOR)
     image = cv2.resize(image, (256, 256))  # Resize image
+    # image = np.array(image) / 255.0
     #do normalization if needed
 
     # Make predictions
